@@ -6,8 +6,7 @@ https://docs.google.com/spreadsheets/d/1TSYMyFLOWLXsRZe5JBBe1sX1zNaMwaYvPRZMfQql
 ### API test
 ```
 post data : https://script.google.com/macros/s/AKfycbz7gxBfH1DUkWCXwtYFFTNVkNschcJfjCdh8WyXNjvKmOfUefk4Hwf3UxeEy5Y8S8ffrQ/exec?action=addData
-```
-```
+
 {
     "date":91715193007,
     "id" : "F001",
