@@ -1,8 +1,9 @@
 # FairLora
 
-### Data
-Sheet : https://docs.google.com/spreadsheets/d/1TSYMyFLOWLXsRZe5JBBe1sX1zNaMwaYvPRZMfQqlRYg/edit?gid=1213476532#gid=1213476532  
-Setup API : https://www.youtube.com/watch?reload=9&v=r817RLqmLac
+### Sheet
+https://docs.google.com/spreadsheets/d/1TSYMyFLOWLXsRZe5JBBe1sX1zNaMwaYvPRZMfQqlRYg/edit?gid=1213476532#gid=1213476532  
+### Setup API
+https://www.youtube.com/watch?reload=9&v=r817RLqmLac
 
 ### API test
 ```
