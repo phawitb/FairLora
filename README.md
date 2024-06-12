@@ -1,4 +1,6 @@
 # FairLora
+### App
+https://iotlora.streamlit.app/
 
 #### Sheet
 https://docs.google.com/spreadsheets/d/1TSYMyFLOWLXsRZe5JBBe1sX1zNaMwaYvPRZMfQqlRYg/edit?gid=1213476532#gid=1213476532  
