@@ -25,5 +25,20 @@ get last : https://script.google.com/macros/s/AKfycbz7gxBfH1DUkWCXwtYFFTNVkNschc
 ```
 get config : https://script.google.com/macros/s/AKfycbz7gxBfH1DUkWCXwtYFFTNVkNschcJfjCdh8WyXNjvKmOfUefk4Hwf3UxeEy5Y8S8ffrQ/exec?action=getConfig&id=F001
 ```
+```
+update config : https://script.google.com/macros/s/AKfycbz7gxBfH1DUkWCXwtYFFTNVkNschcJfjCdh8WyXNjvKmOfUefk4Hwf3UxeEy5Y8S8ffrQ/exec?action=addConfig
+```
+```
+{
+"id":"F001",
+"unit":"F1",
+"adj_temp":0,
+"adj_humid":0,
+"adj_co2":0,
+"line1":"kuYW00r39JrvNhju1S8WPImarC3uz9qUNXlo784KjJg",
+"line2":"",
+"line3":""
+}
+```
 
 
