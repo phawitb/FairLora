@@ -10,7 +10,7 @@ import streamlit.components.v1 as components
 
 st.set_page_config(layout="wide")
 
-def create_gaung(value,name,color):
+def create_gaung(value,name,color,unit):
     option = {
         "tooltip": {
             "formatter": '{a} <br/>{b} : {c}%'
@@ -45,7 +45,7 @@ def create_gaung(value,name,color):
             },
             "detail": {
                 "valueAnimation": "true",
-                "formatter": '{value}%',
+                "formatter": f'{value}{unit}',
                 "backgroundColor": 'white', #'#58D9F9',
                 "borderColor": color, #'#999',
                 "borderWidth": 4,
@@ -127,28 +127,24 @@ with tab1:
 
             col1, col2 = st.columns([1,1])
             with col1:
-                value,name,color = last_date['co2'].iloc[0],'CO2','red'
-                option = create_gaung(value,name,color)
+                value,name,color = last_date['co2'].iloc[0],'CO2','#097969'
+                option = create_gaung(int(value),name,color,'')
                 st_echarts(options=option, key="1")
 
                 value,name,color = last_date['hic'].iloc[0],'Heat Index','red'
-                option = create_gaung(value,name,color)
+                option = create_gaung(round(value, 1),name,color,'°C')
                 st_echarts(options=option, key="2")
 
 
             with col2:
                 
                 value,name,color = last_date['temp'].iloc[0],'Temperature','red'
-                option = create_gaung(value,name,color)
+                option = create_gaung(round(value, 1),name,color,'°C')
                 st_echarts(options=option, key="3")
 
                 value,name,color = last_date['humid'].iloc[0],'Humidity','#58D9F9'
-                option = create_gaung(value,name,color)
-                st_echarts(options=option, key="4")
-
-      
-                
-                
+                option = create_gaung(round(value, 1),name,color,'%')
+                st_echarts(options=option, key="4")            
 
 with tab2:
     if user_id:
@@ -157,14 +153,25 @@ with tab2:
         if isdata:
 
             df_history = df_history.drop(columns=['date'])
+
+            df_history['co2'] = df_history['co2'].astype(int)
+
+            df_history.rename(columns={'datetime': 'Timestamp'}, inplace=True)
+            df_history.rename(columns={'id': 'Device ID'}, inplace=True)
+            df_history.rename(columns={'temp': 'Temperature(°C)'}, inplace=True)
+            df_history.rename(columns={'humid': 'Humidity(%)'}, inplace=True)
+            df_history.rename(columns={'hic': 'Heat index(°C)'}, inplace=True)
+            df_history.rename(columns={'co2': 'CO2'}, inplace=True)
             
             st.line_chart(
             # df_history, x="datetime", y=["temp", "humid"], color=["#FF0000", "#0000FF"]  # Optional
-            df_history, x="datetime", y=['co2','hic',"temp", "humid"]  # Optional
+            df_history, x="Timestamp", y=['CO2','Heat index(°C)',"Temperature(°C)", "Humidity(%)"]  # Optional
             )
 
-            df_history.set_index('datetime', inplace=True)
+            df_history.set_index('Timestamp', inplace=True)
             st.write(df_history)
+
+            # st.table(df_history)
 
         
         
